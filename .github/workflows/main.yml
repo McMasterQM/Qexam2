@@ -45,4 +45,4 @@ jobs:
 
     - name: Run private exam test
       run: |
-        python private_tests/private_tests/test/test_Qexam1.py
+        python private_tests/private_tests/test/test_Qexam2.py
