@@ -35,6 +35,14 @@ jobs:
     - name: Converting file to py file
       run: |
         python convert.py
-    - name: Test multiple choice
+
+    - name: Checkout private tests
+      uses: actions/checkout@v4
+      with:
+        repository: McMasterQM/QuizzesKeys
+        token: ${{ secrets.PRIVATE_TESTS_TOKEN }}
+        path: private_tests/
+
+    - name: Run private exam test
       run: |
-        python problem/test/test_multiple_answers.py
+        python private_tests/private_tests/test/test_Qexam1.py
